@@ -1,0 +1,20 @@
+body, #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.my-div-style {
+    margin-top:1rem;
+}
+
+#map_canvas {
+    max-width:600px;
+    min-width: 300px;
+    height:400px;
+    width: 100%;
+  } 

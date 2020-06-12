@@ -1,0 +1,26 @@
+{% extends "base/base1.html" %}
+
+{% block title %}コメント投稿フォーム | ZERO TOKYO {{ block.super }}{% endblock %}
+
+{% block contents %}
+<div class="container top_margin">
+  <div class="row">
+    <main class="col-md-8">
+      <h1 class="mb-4">コメント投稿フォーム</h1>
+      <p>To:「{{ post.title }}」</p>
+      <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        {% if user.is_authenticated %}
+        <button type="submit" class="btn btn-primary">送信</button>
+        {% else %}
+        <a class="btn btn-primary" href="{% url 'account_login' %}">送信</a>
+        {% endif %}
+      </form>
+    </main>
+    <aside class="col-md-4">
+      {% include "blog/snippets/sidebar.html" %}
+    </aside>
+  </div>
+</div>
+{% endblock %}
+

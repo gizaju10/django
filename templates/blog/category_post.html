@@ -1,0 +1,105 @@
+{% extends 'base/base4.html' %}
+
+{% block title %}「{{ category.name }}」の投稿一覧 | ZERO TOKYO{% endblock %}
+
+{% block contents %}
+<style></style>
+
+<div align="center">
+  <div class="wrapper top_margin">
+    <div class="column">
+      <div class="info">
+  
+      <!-- gmap -->
+      <iframe id="map_canvas" src="https://maps.google.co.jp/maps?&output=embed&q={{ category.name }}&z=12"></iframe>
+      </html>
+  
+
+<!-- ここから※このページ最重要 -->
+      <!-- <div class="ttt">
+        <h1>「{{ category.name }}」の投稿一覧</h1>
+        <ul class="bbb">
+          {% for post in object_list %}
+          {% if user.is_authenticated or post.is_public %}
+          <li class="bbb">{% if not post.is_public %}[下書き] {% endif %}<a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></li>
+          {% else %}
+          <li class="bbb">投稿はありません。</li>
+          {% endif %}
+          {% empty %}
+          <li class="bbb">まだ投稿はありません。</li>
+          {% endfor %}
+        </ul>
+      </div> -->
+<!-- ここまで※このページ最重要 -->
+
+
+
+
+<!-- <div class="container"> -->
+  <div class="example">
+    <main class="col-md-8">
+      <br/>
+      <h1>「{{ category.name }}」の投稿一覧</h1>
+      {% include "blog/snippets/main_post_list.html" %}
+      {% include "blog/snippets/pagination.html" %}
+  </div>
+  
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+  <!-- <a href="{% url 'blog:category_post' 1 %}">{{ object_list.name }}</a> -->
+
+</div>
+</div>
+
+<div class="column">
+  <div class="info">
+    <br></br>
+
+  
+
+      <!-- gmap2列ver. -->
+      <!-- <iframe id="map_canvas" src="http://maps.google.co.jp/maps?&output=embed&q={{ category.name }}&z=18"></iframe>
+      </html> -->
+  
+
+  
+   <!-- map.htmlここまで -->
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+<!-- <div class="container">
+  <div class="row">
+    <main class="col-md-8">
+      <article class="blog-area">
+        <h1>{{ object.title }}</h1>
+        <p>{{ object.published_at|date }}</p>
+        <p>{{ object.category.name }}</p>
+        {% for tag in object.tags.all %}
+        {{ tag.name }}
+        {% endfor %}
+        <hr>
+        {{ object.content|safe }}
+      </article>
+      <article class="comment-area">
+        <a class="btn btn-primary my-3" href="{% url 'blog:comment_form' post.pk %}">コメントを投稿する</a>
+        {% include "blog/snippets/comments.html" %}
+      </article>
+    </main>
+    <aside class="col-md-4">
+      {% include "blog/snippets/sidebar.html" %}
+    </aside>
+  </div>
+</div> -->

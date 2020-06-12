@@ -1,0 +1,42 @@
+{% extends 'base/base1.html' %}
+
+{% block title %}Log In | ZERO TOKYO{% endblock %}
+
+{% block active_login %}active{% endblock %}
+
+{% block contents %}
+<div class="container top_margin">
+    <div class="row">
+        <div class="my-div-style">
+            <h1>Log In</h1>
+
+            <form method="post" action="{% url 'account_login' %}">
+
+                {% csrf_token %}                
+                <div class="box17"><p>ZERO TOKYOでコメント機能を利用するには、
+                    ログインが必須です。<br>まだ、会員登録を
+                    済まされていない場合は、<a href="{% url 'account_signup' %}">コチラから会員登録ができます。</a>
+                </p></div>
+
+                {{ form.as_p }}
+
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <button class="btn btn-primary" type="submit">ログイン</button>
+                <p><a class="button secondaryAction" href="{% url 'account_reset_password' %}">パスワードを忘れましたか？</a></p>
+
+                <div class="box29">
+                    <div class="box-title">ゲストユーザーログイン</div>
+                    <p>ログイン機能をお試しで利用する場合は、下記でログインできます。</p>
+                    <p>メールアドレス : <span class="box1">guest940130@gmail.com</span>
+                    <br>パスワード : <span class="box1">pass1122</span></p> 
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
