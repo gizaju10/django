@@ -2,5 +2,6 @@ accounts/* linguist-language=Python  # accounts/*の拡張子をPythonとして�
 blog/* linguist-language=Python  # blog/*の拡張子をPythonとして検出
 maps/* linguist-language=Python  # maps/*の拡張子をPythonとして検出
 project_zerotokyo/* linguist-language=Python  # project_zerotokyo/*の拡張子をPythonとして検出
-templates/* linguist-language=Python HTML # project_zerotokyo/*の拡張子をPython, HTMLとして検出
+templates/* linguist-language=Python # project_zerotokyo/*の拡張子をPython, HTMLとして検出
+templates/* linguist-language=HTML # project_zerotokyo/*の拡張子をPython, HTMLとして検出
 requirements.txt linguist-language=Python  # requirements.txtの拡張子をPythonとして検出
