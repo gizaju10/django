@@ -1,8 +1,12 @@
 language: python
 python:
-  - "3.7.6
+  - "3.7.6"
+env:
+  global:
+    # SECRET_KEY
+  - secure: "oaFC65D2D8ZlwsQvSvxSLdM5Zic1uBTFr6KVxPHlen3aiC2uF4SaPJVfoEDPtxpr52OybyNX2dtdtt8CPnF+ZvJJArkd5Yev49nwhE3JeuRiM84kyOc/BMfvWAieSfL0E4picaLo0dfIqnqMSGi4EsJj5RPptk2LBzHUWBK24jQDZuWpuXfSuZZ+rE/sCVI5uBbSC7lPDEvoTqjku9rtIn6RIAYVhKK6z4zNvob1zfDjYnUmneLPFE91KCkUwwM1+UX+IRXvIfoiyGSN90hPY1YRybNFM39NEySJrCdXsjoQHIclGZXOwHYaXjPxVlD80aRWyQJSpgFXaqaRbDS9cpOeKK0uo4hl4vHhWLqGTlsZ1pcwbzDkqNxEOVb6NhxrszU27cLR6TQ2pgBZFKIFzrycnqID8zEPJfOtnismjELO4lBUG97bdZkzXNOiNLEc6/LNaQwOyxJw0qo8+sodze8Gib2NwQ6XXETG7MjMohEW3yddKCEFFZL4X8h0sFY3/Rg/rtAGURGx1kSs1Sl/n7ZKH4VwpL+N6Kit2/RHgz/uU1Gx8Xjhp7wkXG84eu/MM5O0wfufM4zRBAp54ARevu1xLOxdkVjIvzFZVziJYECM10c4JaSLLGAjo86VbSLwdhwlqoBuZlH/HBNvmNllTYJDVpMImqwvzfAwdJarcX4="
 install:
   - pip install -r requirements.txt
 script:
-  - python3 manage.py migrate
-  - python3 manage.py test
+  - python manage.py migrate
+  - python manage.py test
