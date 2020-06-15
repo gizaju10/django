@@ -3,7 +3,7 @@ python:
   - "3.7.6"
 env:
   global:
-  - ALLOWED_HOSTS=*
+  - ALLOWED_HOSTS="*"
     # SECRET_KEY
     secure: "Dg7nk6ghliYHejNRmelCdrkGxmPuFlPpWBtH8eabAMJXHn6HQaSf/fZmVyEalqcjOiNDKLQGUGUuzaxHxWQv2q1CU8vuUqrZa+VovV+iQyvDyRAyL3InbIpq518kGkiC9C2n6NV+zX58JUpYn8M331KR4NXiSdc+uVPx+Zj067fDMSo/sx275egkuKGyYO54caxmBws4vRdjNfSKG0cUBfMJDatbiDrOtUFvtKrH1H13HAi8afEPqtwNuhotofW0PCh+aShCJB5pg3TMNFF1dlc7kfV8iFqK0IUhTS2DBs5LFzGanoDxnZE9IDwmcU4re5hMn1tit52nMQTNxXPsnue/p/rcqxc56tYvO0U3MgBCnNHu0B7xmuYgEwpWH/ilvE/qOMXOjq1xjVSN6UqA0QD+NPbvf0OnDFTHlfm4RTItE3cwGsRRVtH3YaH2AEwMJ83MH/806LxbhAq9PCiXNJbzsjFxMeyJiMojrNt53GVzbnT+coQAQdkBmIultEUymWMFO8RPo0gnsuQGh0QKn1FUuKokEv0MYhk4u9qH7wbzk+SUiuTkB5hHFXn6Zdw1vrhUpSvmhHdULIRRFgevpFgynwgRLiEKsC4LiIAhpCy0NqZ36YPUvNCvyETkMKqWtCwhdyCGHsjHucMjqrluu5Z03dEyV7Q7CemvnpHMdoY="
 install:
