@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  db-postgres:
+    image: postgres
+  web:
+    container_name: zerotokyo_django
+    build: . #manage.pyへ
+    volumes:
+      - .:/code #コンテナ内の/codeに繋げる
+    ports:
+      - "8000:8000" #portフォワード
+    depends_on:
+      - db-postgres
+    command: python3 manage.py runserver 0.0.0.0:8000 #Django開発用サーバ起動
