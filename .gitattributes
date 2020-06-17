@@ -3,3 +3,4 @@ blog/* linguist-language=Python  # blog/*の拡張子をPythonとして検出
 maps/* linguist-language=Python  # maps/*の拡張子をPythonとして検出
 project_zerotokyo/* linguist-language=Python  # project_zerotokyo/*の拡張子をPythonとして検出
 requirements.txt linguist-language=Python  # requirements.txtの拡張子をPythonとして検出
+static/vender/* linguist-language=JavaScript
