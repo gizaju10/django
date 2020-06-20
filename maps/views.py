@@ -26,9 +26,6 @@ class InquiryView(generic.FormView):
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
-
-# Create your views here.
-
 def mapfunc(request):
     return render(request, 'map.html')
 
@@ -40,9 +37,3 @@ def tagfunc(request):
 
 def tokyofunc(request):
     return render(request, 'tokyo.html')
-
-# def chiyodafunc(request):
-#     return render(request, 'tokyo23_1_chiyoda.html', {'some':100})
-
-# def chuofunc(request):
-#     return render(request, 'tokyo23_2_chuo.html', {'some':100})

@@ -10,9 +10,7 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, username, email, password, **extra_fields):
-        """
-        Create and save a user with the given username, email, and password.
-        """
+        # 指定されたユーザー名、電子メール、およびパスワードでユーザーを作成して保存。
         if not username:
             raise ValueError('The given username must be set')
         email = self.normalize_email(email)
@@ -42,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     An abstract base class implementing a fully featured User model with
     admin-compliant permissions.
-    Username and password are required. Other fields are optional.
+    ユーザー名とパスワードが必要。 他のフィールドはオプション。
     """
     username_validator = UnicodeUsernameValidator()
 
@@ -83,23 +81,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
-        #abstract = True # ここを削除しないといけないことを忘れない！！！！！！！！！！
+        #abstract = True # エラー発生の為、コメント化
 
     def clean(self):
         super().clean()
         self.email = self.__class__.objects.normalize_email(self.email)
 
     def get_full_name(self):
-        """
-        Return the first_name plus the last_name, with a space in between.
-        """
+        # 間にスペースを入れて、first_nameとlast_nameを返す。
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
 
     def get_short_name(self):
-        """Return the short name for the user."""
+        # 短いユーザー名を返す。
         return self.first_name
 
     def email_user(self, subject, message, from_email=None, **kwargs):
-        """Send an email to this user."""
+        # このユーザーにメールを送信する。
         send_mail(subject, message, from_email, [self.email], **kwargs)

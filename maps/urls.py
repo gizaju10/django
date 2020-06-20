@@ -10,9 +10,6 @@ urlpatterns = [
     path('tokyo23/', tokyo23func, name="tokyo23"),
     path('tag/', tagfunc, name="tag"),
     path('tokyo/', tokyofunc, name="tokyo"),
-    # path('chiyoda/', chiyodafunc),
-    # path('chuo/', chuofunc),
-    
     path('', views.IndexView.as_view(), name="index"),
     path('inquiry/', views.InquiryView.as_view(), name="inquiry"),
 ]
