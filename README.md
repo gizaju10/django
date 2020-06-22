@@ -4,9 +4,11 @@
 
 ## URL
 https://gizagiza.work/
+### PC画面例
 ![zerorokyo_PC.PNG](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerorokyo_PC.PNG)
 
-<img src="https://giza-s3.s3-ap-northeast-1.amazonaws.com/Screenshot_20200622-202057.png" width=20%>
+### スマホ画面例
+<center><img src="https://giza-s3.s3-ap-northeast-1.amazonaws.com/Screenshot_20200622-202057.png" width=25%></center>
 
 ![zerotokyo.png](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerotokyo.png)
 
