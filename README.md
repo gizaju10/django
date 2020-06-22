@@ -7,5 +7,5 @@ https://gizagiza.work/
 
 
 ![zerotokyo (5).png](https://github.com/gizaju10/django/blob/master/zerotokyo%20(5).png?raw=true)
-![zerotokyo (5).png](https://giza-s3.s3-ap-northeast-1.amazonaws.com/character_karaage.png)
+![zerotokyo (5).png](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerotokyo.png)
 
