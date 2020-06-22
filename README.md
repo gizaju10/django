@@ -7,5 +7,6 @@ https://gizagiza.work/
 
 
 ![zerorokyo_PC.PNG](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerorokyo_PC.PNG)
+![smartphone.PNG](https://giza-s3.s3-ap-northeast-1.amazonaws.com/Screenshot_20200622-202057.png)
 ![zerotokyo.png](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerotokyo.png)
 
