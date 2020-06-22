@@ -8,8 +8,9 @@ https://gizagiza.work/
 ![PC](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerorokyo_PC.PNG)
 
 <div align="center">
-<h3>スマホ画面例</h3>
-
+  <h3>スマホ画面例</h3>
+</div>
+<div align="center">
   <img src="https://giza-s3.s3-ap-northeast-1.amazonaws.com/Screenshot_20200622-202057.png" width=25% title＝"スマホ">
  </div>
 
