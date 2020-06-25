@@ -37,7 +37,4 @@ urlpatterns = [
 
     # 検索から探すクリック時のリンク
     path('search_list/', searchfunc, name='search_list'),
-
-    # 仮設定
-    # path('index/', indexfunc, name="index"),
 ]
