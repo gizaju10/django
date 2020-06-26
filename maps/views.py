@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 class IndexView(generic.TemplateView):
     template_name = "index.html"
 
+# お問い合わせフォーム
 class InquiryView(generic.FormView):
     template_name = "inquiry.html"
     form_class = InquiryForm
