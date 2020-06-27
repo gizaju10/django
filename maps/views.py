@@ -26,15 +26,3 @@ class InquiryView(generic.FormView):
         messages.success(self.request, 'メッセージを送信しました。')
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
-
-def mapfunc(request):
-    return render(request, 'map.html')
-
-def tokyo23func(request):
-    return render(request, 'tokyo23.html')
-
-def tagfunc(request):
-    return render(request, 'tag.html')
-
-def tokyofunc(request):
-    return render(request, 'tokyo.html')
