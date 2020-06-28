@@ -47,11 +47,9 @@ class CategoryListView(ListView):
     queryset = Category.objects.annotate(
         num_posts=Count('post', filter=Q(post__is_public=True)))
 
-
 class TagListView(ListView):
     queryset = Tag.objects.annotate(num_posts=Count(
         'post', filter=Q(post__is_public=True)))
-
 
 
 # 各オブジェクトに紐づいている Post の一覧に移動できるように各オブジェクトに紐づいている Post の一覧に移動できるようにする
@@ -184,7 +182,3 @@ def reply_remove(request, pk):
 
 def searchfunc(request):
     return render(request, 'blog/search_list.html',)
-
-# 仮設定
-# def indexfunc(request):
-#     return render(request, 'blog:index', {'some':100})
