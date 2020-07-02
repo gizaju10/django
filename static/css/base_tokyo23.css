@@ -131,14 +131,12 @@ img.top_map {
     }
 
   /* gmap上文 */
-    .text {
-      font-size: 200%;
-  }
-    
   .text {
+      font-size: 200%;
       position: relative;
       display: inline-block;
       margin-bottom: 1em;
+      color: #000;
   }
   
   .text:before {

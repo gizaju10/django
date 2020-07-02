@@ -69,22 +69,13 @@
 
  <br>
         <div align="center">
-        <h1>東京23区の天気</h1>
+        <h1>東京２３区の天気</h1>
         
         <iframe id="forecast_embed" type="text/html" frameborder="0" height="245"
         width="100%" src="http://forecast.io/embed/#lat=35.689487&lon=139.691706&
         name=Tokyo&units=si"></iframe>
         
-        <div class="ttt">
-            {{today}}
-          <ul class="bbb">
-            {% for tag in object_list %}
-            <li class="bbb"><a href="{% url 'blog:tag_post' tag.slug %}">{{ tag.name }} ({{ tag.num_posts }})</a></li>
-            {% empty %}
-            <li class="bbb">タグはありません。</li>
-            {% endfor %}
-          </ul>
-          </div>
+
         </div>
 
         {% block header%}{% endblock %}
@@ -106,7 +97,6 @@
         {% endif %}
         {% block contents%}
         {% endblock %}
-  
 <!-- 1行空白を追加 -->
 <br/>
 <!-- 編集予定 -->
