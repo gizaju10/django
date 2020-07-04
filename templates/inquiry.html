@@ -1,7 +1,5 @@
 {% extends 'base/base1.html' %}
-
 {% block title %}Inquiry | ZERO TOKYO{% endblock %}
-
 {% block active_inquiry %}active{% endblock %}
 
 {% block contents %}
@@ -15,15 +13,15 @@
                 {{ form.non_field_errors }}
 
                 {% for field in form %}
-                    <div class="form-group row">
-                        <label for="{{ field.id_for_label }}" class="col-sm-4 col-form-label">
-                            <strong>{{ field.label_tag }}</strong>
-                        </label>
-                        <div class="col-sm-8">
-                            {{ field }}
-                            {{ field.errors }}
-                        </div>
+                <div class="form-group row">
+                    <label for="{{ field.id_for_label }}" class="col-sm-4 col-form-label">
+                        <strong>{{ field.label_tag }}</strong>
+                    </label>
+                    <div class="col-sm-8">
+                        {{ field }}
+                        {{ field.errors }}
                     </div>
+                </div>
                 {% endfor %}
 
                 <div class="offset-sm-4 col-sm-8">

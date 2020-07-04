@@ -1,268 +1,246 @@
 {% extends 'base/base1.html' %}
 {% load static %}
-
 {% block title %}ZERO TOKYO{% endblock %}
-
-
 
 {% block header%}{% endblock %}
 
 {% block contents %}
-    <header class="text-center">
-      <div class="masthead-content">
-        <div class="container">
-        <!-- 1行空白を追加 -->
-        <br/>
-          <h1 class="top masthead-heading mb-0">ZERO TOKYO</h1>
-          <h2 class="top masthead-subheading mb-0">０円で楽しむ東京観光</h2>
-    
-        <!-- 1行空白を追加 -->
-        <br/>
-          <!-- <a href="{% url 'account_login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a> -->
-        </div>
-      </div>
-      <div class="bg-circle-1 bg-circle"></div>
-      <div class="bg-circle-2 bg-circle"></div>
-      <div class="bg-circle-3 bg-circle"></div>
-      <div class="bg-circle-4 bg-circle"></div>
-     
-<style></style>
+<header class="text-center">
+  <div class="masthead-content">
+    <div class="container">
 
+      <!-- 1行空白を追加 -->
+      <br />
+      <h1 class="top masthead-heading mb-0">ZERO TOKYO</h1>
+      <h2 class="top masthead-subheading mb-0">０円で楽しむ東京観光</h2>
 
-
-
-<div align="center">
-  <div class="wrapper">
-    <div class="column">
-      <div class="info">
-  
-      <!-- map.htmlここから2 -->
-      <!-- 編集予定 -->
-      <div>
-          <a href="{% url 'blog:index' %}" class="btn-circle-border-double"><br><br>最新スポット<p class="font">から探す</p> &raquo;</a>
-        <p>　</p>
-          <a href="{% url 'blog:category_list' %}" class="btn-circle-border-double"><br><br>23区エリア<p class="font">から探す</p> &raquo;</a>
-        <p>　</p>
-          <a href="{% url 'blog:tag_list' %}" class="btn-circle-border-double"><br><br>天気<p class="font">から探す</p> &raquo;</a>
-      </div>
-    <!-- map.htmlここまで2 -->
-
-  <!-- 1行空白を追加 -->
-  <br/>
-
-  </div>
-  </div>
-  
-  <div class="column">
-    <div class="info">
-  
-     <!-- map.htmlから -->
-     
-    <!-- gmap上に文字追加 -->
-    <a class="text">Enjoy Tokyo for 0 yen!!!</a>
-
-      <div align="center">
-  
-        <script src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAP_API }}"></script>
-        
-        
-        <div id="map_canvas"></div>
-        </div>
-        
-        <script>
-        var map = null;
-        var infowindow = new google.maps.InfoWindow();
-        var gmarkers = [];
-        var i = 0;
-         
-        function inicializar() {
-          // 初期設定
-          var option = {
-            // ズームレベル
-            zoom: 12,
-            // 中心座標
-            center: new google.maps.LatLng(35.681260, 139.767125),
-            // タイプ (ROADMAP・SATELLITE・TERRAIN・HYBRIDから選択)
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-          map = new google.maps.Map(document.getElementById("map_canvas"), option);
-          google.maps.event.addListener(map, "click", function() {infowindow.close();});
-         
-  // gmapポイントの追加
-  
-  //  LIVE JAPAN https://livejapan.com/ja/article-a0000031/
-  var point = new google.maps.LatLng(35.671078, 139.858394);
-        var marker = create_maker(point, "江戸川区自然動物園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/江戸川区自然動物園1.jpg' /><br><a href='{% url 'blog:post_detail' 7 %}' target='_blank'>江戸川区自然動物園</a>");
-       
-        var point = new google.maps.LatLng(35.680009, 139.764940);
-        var marker = create_maker(point, "インターメディアテク", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/インターメディアテク1.jpg' /><br><a href='{% url 'blog:post_detail' 21 %}' target='_blank'>インターメディアテク</a>");
-       
-        var point = new google.maps.LatLng(35.626784, 139.782620);
-        var marker = create_maker(point, "メガウェブ トヨタ シティ ショウケース", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/メガウェブトヨタシティショウケース1.jpg' /><br><a href='{% url 'blog:post_detail' 18 %}' target='_blank'>メガウェブ トヨタ シティ ショウケース</a>");
-      
-        var point = new google.maps.LatLng(35.698598, 139.761872);
-        var marker = create_maker(point, "明治大学博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/明治大学博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 23 %}' target='_blank'>明治大学博物館</a>");
-      
-        var point = new google.maps.LatLng(35.710422, 139.607824);
-        var marker = create_maker(point, "杉並アニメーションミュージアム", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/杉並アニメーションミュージアム1.jpg' /><br><a href='{% url 'blog:post_detail' 24 %}' target='_blank'>杉並アニメーションミュージアム</a>");
-       
-        var point = new google.maps.LatLng(35.665384, 139.761140);
-        var marker = create_maker(point, "アドミュージアム東京", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/アドミュージアム東京1.jpg' /><br><a href='{% url 'blog:post_detail' 19 %}' target='_blank'>アドミュージアム東京</a>");
-       
-        var point = new google.maps.LatLng(35.688193, 139.719895);
-        var marker = create_maker(point, "消防博物館 東京消防庁消防防災資料センター", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/消防博物館東京消防庁消防防災資料センター1.jpg' /><br><a href='{% url 'blog:post_detail' 25 %}' target='_blank'>消防博物館 東京消防庁消防防災資料センター</a>");
-      
-        var point = new google.maps.LatLng(35.708050, 139.752309);
-        var marker = create_maker(point, "文京シビックセンター 展望ラウンジ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/文京シビックセンター展望ラウンジ1.jpg' /><br><a href='{% url 'blog:post_detail' 26 %}' target='_blank'>文京シビックセンター 展望ラウンジ</a>");
-      
-  // 東京デート https://www.enjoytokyo.jp/date/detail/609/
-        var point = new google.maps.LatLng(35.671628, 139.696864);
-        var marker = create_maker(point, "代々木公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/代々木公園1.jpg' /><br><a href='{% url 'blog:post_detail' 22 %}' target='_blank'>代々木公園</a>");
-       
-        var point = new google.maps.LatLng(35.660389, 139.730592);
-        var marker = create_maker(point, "毛利庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/毛利庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 20 %}' target='_blank'>毛利庭園</a>");
-      
-        var point = new google.maps.LatLng(35.665993, 139.730882);
-        var marker = create_maker(point, "ミッドタウン・ガーデン（東京ミッドタウン）", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ミッドタウンガーデン東京ミッドタウン1.jpg' /><br><a href='{% url 'blog:post_detail' 27 %}' target='_blank'>ミッドタウン・ガーデン（東京ミッドタウン）</a>");
-      
-        var point = new google.maps.LatLng(35.630179, 139.775811);
-        var marker = create_maker(point, "お台場海浜公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/お台場海浜公園1.jpg' /><br><a href='{% url 'blog:post_detail' 28 %}' target='_blank'>お台場海浜公園</a>");
-       
-        var point = new google.maps.LatLng(35.679586, 139.765024);
-        var marker = create_maker(point, "KITTEガーデン", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/KITTEガーデン1.jpg' /><br><a href='{% url 'blog:post_detail' 29 %}' target='_blank'>KITTEガーデン</a>");
-       
-        var point = new google.maps.LatLng(35.672532, 139.762812);
-        var marker = create_maker(point, "キリコラウンジ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/キリコラウンジ1.jpg' /><br><a href='{% url 'blog:post_detail' 30 %}' target='_blank'>キリコラウンジ</a>");
-       
-        var point = new google.maps.LatLng(35.668583, 139.761931);
-        var marker = create_maker(point, "資生堂ギャラリー", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/資生堂ギャラリー1.jpg' /><br><a href='{% url 'blog:post_detail' 31 %}' target='_blank'>資生堂ギャラリー</a>");
-      
-        var point = new google.maps.LatLng(35.674274, 139.767980);
-        var marker = create_maker(point, "ポーラ ミュージアム アネックス", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ポーラミュージアムアネックス1.jpg' /><br><a href='{% url 'blog:post_detail' 32 %}' target='_blank'>ポーラ ミュージアム アネックス</a>");
-      
-        var point = new google.maps.LatLng(35.671961, 139.763400);
-        var marker = create_maker(point, "銀座メゾンエルメス フォーラム", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/銀座メゾンエルメスフォーラム1.jpg' /><br><a href='{% url 'blog:post_detail' 33 %}' target='_blank'>銀座メゾンエルメス フォーラム</a>");
-       
-        var point = new google.maps.LatLng(35.671449, 139.767693);
-        var marker = create_maker(point, "キヤノンギャラリー銀座", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/キヤノンギャラリー銀座1.jpg' /><br><a href='{% url 'blog:post_detail' 54 %}' target='_blank'>キヤノンギャラリー銀座</a>");
-      
-        var point = new google.maps.LatLng(35.669725, 139.762541);
-        var marker = create_maker(point, "ギンザ・グラフィック・ギャラリー", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ギンザグラフィックギャラリー1.jpg' /><br><a href='{% url 'blog:post_detail' 35 %}' target='_blank'>ギンザ・グラフィック・ギャラリー</a>");
-       
-        var point = new google.maps.LatLng(35.676279, 139.771046);
-        var marker = create_maker(point, "宝くじドリーム館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/宝くじドリーム館1.jpg' /><br><a href='{% url 'blog:post_detail' 36 %}' target='_blank'>宝くじドリーム館</a>");
-      
-        var point = new google.maps.LatLng(35.678960, 139.761586);
-        var marker = create_maker(point, "明治生命館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/明治生命館1.jpg' /><br><a href='{% url 'blog:post_detail' 37 %}' target='_blank'>明治生命館</a>");
-      
-        var point = new google.maps.LatLng(35.685046, 139.691501);
-        var marker = create_maker(point, "リビングデザインセンターOZONE", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/リビングデザインセンターOZONE1.jpg' /><br><a href='{% url 'blog:post_detail' 38 %}' target='_blank'>リビングデザインセンターOZONE</a>");
-       
-        var point = new google.maps.LatLng(35.665344, 139.730351);
-        var marker = create_maker(point, "FUJIFILM SQUARE", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/FUJIFILMSQUARE1.jpg' /><br><a href='{% url 'blog:post_detail' 39 %}' target='_blank'>FUJIFILM SQUARE</a>");
-      
-        var point = new google.maps.LatLng(35.683496, 139.760955);
-        var marker = create_maker(point, "和田倉噴水公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/和田倉噴水公園1.jpg' /><br><a href='{% url 'blog:post_detail' 40 %}' target='_blank'>和田倉噴水公園</a>");
-       
-        var point = new google.maps.LatLng(35.678947, 139.763156);
-        var marker = create_maker(point, "丸の内ブリックスクエア", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/丸の内ブリックスクエア一号館広場1.jpg' /><br><a href='{% url 'blog:post_detail' 41 %}' target='_blank'>丸の内ブリックスクエア</a>");
-      
-        var point = new google.maps.LatLng(35.690953, 139.704101);
-        var marker = create_maker(point, "新宿マルイ本館 屋上", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/新宿マルイ本館屋上1.jpg' /><br><a href='{% url 'blog:post_detail' 42 %}' target='_blank'>新宿マルイ本館 屋上</a>");
-      
-        var point = new google.maps.LatLng(35.626667, 139.774070);
-        var marker = create_maker(point, "フジテレビ屋上庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/フジテレビ屋上庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 43 %}' target='_blank'>フジテレビ屋上庭園</a>");
-       
-        var point = new google.maps.LatLng(35.668585, 139.705774);
-        var marker = create_maker(point, "東急プラザ表参道原宿 おもはらの森", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/東急プラザ表参道原宿おもはらの森1.jpg' /><br><a href='{% url 'blog:post_detail' 44 %}' target='_blank'>東急プラザ表参道原宿 おもはらの森</a>");
-      
-        var point = new google.maps.LatLng(35.729348, 139.711775);
-        var marker = create_maker(point, "食と緑の空中庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/食と緑の空中庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 45 %}' target='_blank'>食と緑の空中庭園</a>");
-       
-        var point = new google.maps.LatLng(35.710687, 139.796560);
-        var marker = create_maker(point, "浅草文化観光センター", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/浅草文化観光センター1.jpg' /><br><a href='{% url 'blog:post_detail' 46 %}' target='_blank'>浅草文化観光センター</a>");
-      
-        var point = new google.maps.LatLng(35.719222, 139.803627);
-        var marker = create_maker(point, "今戸神社", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/今戸神社1.jpg' /><br><a href='{% url 'blog:post_detail' 47 %}' target='_blank'>今戸神社</a>");
-      
-        var point = new google.maps.LatLng(35.717101, 139.803026);
-        var marker = create_maker(point, "待乳山聖天 本龍院", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/待乳山聖天本龍院1.jpg' /><br><a href='{% url 'blog:post_detail' 48 %}' target='_blank'>待乳山聖天 本龍院</a>");
-       
-        var point = new google.maps.LatLng(35.694183, 139.809384);
-        var marker = create_maker(point, "ブレーキ博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ブレーキ博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 49 %}' target='_blank'>ブレーキ博物館</a>");
-      
-        var point = new google.maps.LatLng(35.708059, 139.795286);
-        var marker = create_maker(point, "世界のカバン博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/世界のカバン博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 50 %}' target='_blank'>世界のカバン博物館</a>");
-       
-        var point = new google.maps.LatLng(35.711922, 139.798390);
-        var marker = create_maker(point, "浅草ハレテラス 浅草エキミセ屋上", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/浅草ハレテラス浅草エキミセ屋上1.jpg' /><br><a href='{% url 'blog:post_detail' 51 %}' target='_blank'>浅草ハレテラス 浅草エキミセ屋上</a>");
-      
-        var point = new google.maps.LatLng(35.787171, 139.869862);
-        var marker = create_maker(point, "水元公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/水元公園1.jpg' /><br><a href='{% url 'blog:post_detail' 17 %}' target='_blank'>水元公園</a>");
-      
-        var point = new google.maps.LatLng(35.605463, 139.645608);
-        var marker = create_maker(point, "等々力渓谷公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/等々力渓谷公園1.jpg' /><br><a href='{% url 'blog:post_detail' 52 %}' target='_blank'>等々力渓谷公園</a>");
-       
-        var point = new google.maps.LatLng(35.625822, 139.660614);
-        var marker = create_maker(point, "駒沢オリンピック公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/駒沢オリンピック公園1.jpg' /><br><a href='{% url 'blog:post_detail' 53 %}' target='_blank'>駒沢オリンピック公園</a>");
-      
-  // その他のサイト 主にじゃらん https://www.jalan.net/kankou/130000/
-        var point = new google.maps.LatLng(35.750401, 139.739255);
-        var marker = create_maker(point, "飛鳥山公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/飛鳥山公園1.jpg' /><br><a href='{% url 'blog:post_detail' 61 %}' target='_blank'>飛鳥山公園</a>");
-      
-        var point = new google.maps.LatLng(35.797586, 139.772180);
-        var marker = create_maker(point, "舎人公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/舎人公園1.jpg' /><br><a href='{% url 'blog:post_detail' 62 %}' target='_blank'>舎人公園</a>");
-      
-        var point = new google.maps.LatLng(35.619342, 139.743053);
-        var marker = create_maker(point, "一心寺", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/一心寺1.jpg' /><br><a href='{% url 'blog:post_detail' 64 %}' target='_blank'>一心寺</a>");
-      
-        var point = new google.maps.LatLng(35.780643, 139.644288);
-        var marker = create_maker(point, "赤塚植物園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/赤塚植物園1.jpg' /><br><a href='{% url 'blog:post_detail' 65 %}' target='_blank'>赤塚植物園</a>");
-      
-        var point = new google.maps.LatLng(35.549234, 139.783536);
-        var marker = create_maker(point, "羽田空港展望デッキ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/羽田空港展望デッキ1.jpg' /><br><a href='{% url 'blog:post_detail' 66 %}' target='_blank'>羽田空港展望デッキ</a>");
-      
-        var point = new google.maps.LatLng(35.722488, 139.674187);
-        var marker = create_maker(point, "哲学堂公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/哲学堂公園1.jpg' /><br><a href='{% url 'blog:post_detail' 67 %}' target='_blank'>哲学堂公園</a>");
-      
-        var point = new google.maps.LatLng(35.785050, 139.599912);
-        var marker = create_maker(point, "陸上自衛隊広報センターりっくんランド", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/陸上自衛隊広報センターりっくんランド1.jpg' /><br><a href='{% url 'blog:post_detail' 68 %}' target='_blank'>陸上自衛隊広報センターりっくんランド</a>");
-      
-        var point = new google.maps.LatLng(35.732286, 139.797748);
-        var marker = create_maker(point, "小塚原刑場跡", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/小塚原刑場跡1.jpg' /><br><a href='{% url 'blog:post_detail' 69 %}' target='_blank'>小塚原刑場跡</a>");
-      }
-        
-         
-        function create_maker(latlng, label, html) {
-          // マーカーを生成
-          var marker = new google.maps.Marker({position: latlng, map: map, title: label});
-          // マーカーをクリックした時の処理
-          google.maps.event.addListener(marker, "click", function() {
-            infowindow.setContent(html);
-            infowindow.open(map, marker);
-          });
-          gmarkers[i] = marker;
-            i++;
-            return marker;
-        }
-         
-        function map_click(i) {
-          google.maps.event.trigger(gmarkers[i], "click");
-        }
-         
-        google.maps.event.addDomListener(window, "load", inicializar);
-        </script>
-        
-        </body>
-        </html>
-    
-    
-    
-     <!-- map.htmlここまで -->
-<!-- 1行空白を追加 -->
-<br/>
-
+      <!-- 1行空白を追加 -->
+      <br />
     </div>
   </div>
-  </div>
-{% endblock %}
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+  <style></style>
+  <div align="center">
+    <div class="wrapper">
+      <div class="column">
+        <div class="info">
+
+          <!-- 選択エリアここから -->
+          <div>
+            <a href="{% url 'blog:index' %}" class="btn-circle-border-double"><br><br>最新スポット<p class="font">から探す</p>
+              &raquo;</a>
+            <p>　</p>
+            <a href="{% url 'blog:category_list' %}" class="btn-circle-border-double"><br><br>23区エリア<p class="font">から探す
+              </p> &raquo;</a>
+            <p>　</p>
+            <a href="{% url 'blog:tag_list' %}" class="btn-circle-border-double"><br><br>天気<p class="font">から探す</p>
+              &raquo;</a>
+          </div>
+          <!-- 選択エリアここまで -->
+          <!-- 1行空白を追加 -->
+          <br />
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="info">
+          <!-- mapここから -->
+          <!-- gmap上に文字追加 -->
+          <a class="text">Enjoy Tokyo for 0 yen!!!</a>
+          <div align="center">
+            <script src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAP_API }}"></script>
+            <div id="map_canvas"></div>
+          </div>
+
+          <script>
+            var map = null;
+            var infowindow = new google.maps.InfoWindow();
+            var gmarkers = [];
+            var i = 0;
+
+            function inicializar() {
+              // 初期設定
+              var option = {
+                // ズームレベル
+                zoom: 12,
+                // 中心座標
+                center: new google.maps.LatLng(35.681260, 139.767125),
+                // タイプ (ROADMAP・SATELLITE・TERRAIN・HYBRIDから選択)
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              map = new google.maps.Map(document.getElementById("map_canvas"), option);
+              google.maps.event.addListener(map, "click", function () { infowindow.close(); });
+
+              // gmapポイントの追加
+              //  LIVE JAPAN https://livejapan.com/ja/article-a0000031/
+              var point = new google.maps.LatLng(35.671078, 139.858394);
+              var marker = create_maker(point, "江戸川区自然動物園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/江戸川区自然動物園1.jpg' /><br><a href='{% url 'blog:post_detail' 7 %}' target='_blank'>江戸川区自然動物園</a>");
+
+              var point = new google.maps.LatLng(35.680009, 139.764940);
+              var marker = create_maker(point, "インターメディアテク", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/インターメディアテク1.jpg' /><br><a href='{% url 'blog:post_detail' 21 %}' target='_blank'>インターメディアテク</a>");
+
+              var point = new google.maps.LatLng(35.626784, 139.782620);
+              var marker = create_maker(point, "メガウェブ トヨタ シティ ショウケース", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/メガウェブトヨタシティショウケース1.jpg' /><br><a href='{% url 'blog:post_detail' 18 %}' target='_blank'>メガウェブ トヨタ シティ ショウケース</a>");
+
+              var point = new google.maps.LatLng(35.698598, 139.761872);
+              var marker = create_maker(point, "明治大学博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/明治大学博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 23 %}' target='_blank'>明治大学博物館</a>");
+
+              var point = new google.maps.LatLng(35.710422, 139.607824);
+              var marker = create_maker(point, "杉並アニメーションミュージアム", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/杉並アニメーションミュージアム1.jpg' /><br><a href='{% url 'blog:post_detail' 24 %}' target='_blank'>杉並アニメーションミュージアム</a>");
+
+              var point = new google.maps.LatLng(35.665384, 139.761140);
+              var marker = create_maker(point, "アドミュージアム東京", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/アドミュージアム東京1.jpg' /><br><a href='{% url 'blog:post_detail' 19 %}' target='_blank'>アドミュージアム東京</a>");
+
+              var point = new google.maps.LatLng(35.688193, 139.719895);
+              var marker = create_maker(point, "消防博物館 東京消防庁消防防災資料センター", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/消防博物館東京消防庁消防防災資料センター1.jpg' /><br><a href='{% url 'blog:post_detail' 25 %}' target='_blank'>消防博物館 東京消防庁消防防災資料センター</a>");
+
+              var point = new google.maps.LatLng(35.708050, 139.752309);
+              var marker = create_maker(point, "文京シビックセンター 展望ラウンジ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/文京シビックセンター展望ラウンジ1.jpg' /><br><a href='{% url 'blog:post_detail' 26 %}' target='_blank'>文京シビックセンター 展望ラウンジ</a>");
+
+              // 東京デート https://www.enjoytokyo.jp/date/detail/609/
+              var point = new google.maps.LatLng(35.671628, 139.696864);
+              var marker = create_maker(point, "代々木公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/代々木公園1.jpg' /><br><a href='{% url 'blog:post_detail' 22 %}' target='_blank'>代々木公園</a>");
+
+              var point = new google.maps.LatLng(35.660389, 139.730592);
+              var marker = create_maker(point, "毛利庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/毛利庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 20 %}' target='_blank'>毛利庭園</a>");
+
+              var point = new google.maps.LatLng(35.665993, 139.730882);
+              var marker = create_maker(point, "ミッドタウン・ガーデン（東京ミッドタウン）", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ミッドタウンガーデン東京ミッドタウン1.jpg' /><br><a href='{% url 'blog:post_detail' 27 %}' target='_blank'>ミッドタウン・ガーデン（東京ミッドタウン）</a>");
+
+              var point = new google.maps.LatLng(35.630179, 139.775811);
+              var marker = create_maker(point, "お台場海浜公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/お台場海浜公園1.jpg' /><br><a href='{% url 'blog:post_detail' 28 %}' target='_blank'>お台場海浜公園</a>");
+
+              var point = new google.maps.LatLng(35.679586, 139.765024);
+              var marker = create_maker(point, "KITTEガーデン", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/KITTEガーデン1.jpg' /><br><a href='{% url 'blog:post_detail' 29 %}' target='_blank'>KITTEガーデン</a>");
+
+              var point = new google.maps.LatLng(35.672532, 139.762812);
+              var marker = create_maker(point, "キリコラウンジ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/キリコラウンジ1.jpg' /><br><a href='{% url 'blog:post_detail' 30 %}' target='_blank'>キリコラウンジ</a>");
+
+              var point = new google.maps.LatLng(35.668583, 139.761931);
+              var marker = create_maker(point, "資生堂ギャラリー", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/資生堂ギャラリー1.jpg' /><br><a href='{% url 'blog:post_detail' 31 %}' target='_blank'>資生堂ギャラリー</a>");
+
+              var point = new google.maps.LatLng(35.674274, 139.767980);
+              var marker = create_maker(point, "ポーラ ミュージアム アネックス", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ポーラミュージアムアネックス1.jpg' /><br><a href='{% url 'blog:post_detail' 32 %}' target='_blank'>ポーラ ミュージアム アネックス</a>");
+
+              var point = new google.maps.LatLng(35.671961, 139.763400);
+              var marker = create_maker(point, "銀座メゾンエルメス フォーラム", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/銀座メゾンエルメスフォーラム1.jpg' /><br><a href='{% url 'blog:post_detail' 33 %}' target='_blank'>銀座メゾンエルメス フォーラム</a>");
+
+              var point = new google.maps.LatLng(35.671449, 139.767693);
+              var marker = create_maker(point, "キヤノンギャラリー銀座", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/キヤノンギャラリー銀座1.jpg' /><br><a href='{% url 'blog:post_detail' 54 %}' target='_blank'>キヤノンギャラリー銀座</a>");
+
+              var point = new google.maps.LatLng(35.669725, 139.762541);
+              var marker = create_maker(point, "ギンザ・グラフィック・ギャラリー", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ギンザグラフィックギャラリー1.jpg' /><br><a href='{% url 'blog:post_detail' 35 %}' target='_blank'>ギンザ・グラフィック・ギャラリー</a>");
+
+              var point = new google.maps.LatLng(35.676279, 139.771046);
+              var marker = create_maker(point, "宝くじドリーム館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/宝くじドリーム館1.jpg' /><br><a href='{% url 'blog:post_detail' 36 %}' target='_blank'>宝くじドリーム館</a>");
+
+              var point = new google.maps.LatLng(35.678960, 139.761586);
+              var marker = create_maker(point, "明治生命館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/明治生命館1.jpg' /><br><a href='{% url 'blog:post_detail' 37 %}' target='_blank'>明治生命館</a>");
+
+              var point = new google.maps.LatLng(35.685046, 139.691501);
+              var marker = create_maker(point, "リビングデザインセンターOZONE", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/リビングデザインセンターOZONE1.jpg' /><br><a href='{% url 'blog:post_detail' 38 %}' target='_blank'>リビングデザインセンターOZONE</a>");
+
+              var point = new google.maps.LatLng(35.665344, 139.730351);
+              var marker = create_maker(point, "FUJIFILM SQUARE", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/FUJIFILMSQUARE1.jpg' /><br><a href='{% url 'blog:post_detail' 39 %}' target='_blank'>FUJIFILM SQUARE</a>");
+
+              var point = new google.maps.LatLng(35.683496, 139.760955);
+              var marker = create_maker(point, "和田倉噴水公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/和田倉噴水公園1.jpg' /><br><a href='{% url 'blog:post_detail' 40 %}' target='_blank'>和田倉噴水公園</a>");
+
+              var point = new google.maps.LatLng(35.678947, 139.763156);
+              var marker = create_maker(point, "丸の内ブリックスクエア", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/丸の内ブリックスクエア一号館広場1.jpg' /><br><a href='{% url 'blog:post_detail' 41 %}' target='_blank'>丸の内ブリックスクエア</a>");
+
+              var point = new google.maps.LatLng(35.690953, 139.704101);
+              var marker = create_maker(point, "新宿マルイ本館 屋上", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/新宿マルイ本館屋上1.jpg' /><br><a href='{% url 'blog:post_detail' 42 %}' target='_blank'>新宿マルイ本館 屋上</a>");
+
+              var point = new google.maps.LatLng(35.626667, 139.774070);
+              var marker = create_maker(point, "フジテレビ屋上庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/フジテレビ屋上庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 43 %}' target='_blank'>フジテレビ屋上庭園</a>");
+
+              var point = new google.maps.LatLng(35.668585, 139.705774);
+              var marker = create_maker(point, "東急プラザ表参道原宿 おもはらの森", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/東急プラザ表参道原宿おもはらの森1.jpg' /><br><a href='{% url 'blog:post_detail' 44 %}' target='_blank'>東急プラザ表参道原宿 おもはらの森</a>");
+
+              var point = new google.maps.LatLng(35.729348, 139.711775);
+              var marker = create_maker(point, "食と緑の空中庭園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/食と緑の空中庭園1.jpg' /><br><a href='{% url 'blog:post_detail' 45 %}' target='_blank'>食と緑の空中庭園</a>");
+
+              var point = new google.maps.LatLng(35.710687, 139.796560);
+              var marker = create_maker(point, "浅草文化観光センター", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/浅草文化観光センター1.jpg' /><br><a href='{% url 'blog:post_detail' 46 %}' target='_blank'>浅草文化観光センター</a>");
+
+              var point = new google.maps.LatLng(35.719222, 139.803627);
+              var marker = create_maker(point, "今戸神社", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/今戸神社1.jpg' /><br><a href='{% url 'blog:post_detail' 47 %}' target='_blank'>今戸神社</a>");
+
+              var point = new google.maps.LatLng(35.717101, 139.803026);
+              var marker = create_maker(point, "待乳山聖天 本龍院", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/待乳山聖天本龍院1.jpg' /><br><a href='{% url 'blog:post_detail' 48 %}' target='_blank'>待乳山聖天 本龍院</a>");
+
+              var point = new google.maps.LatLng(35.694183, 139.809384);
+              var marker = create_maker(point, "ブレーキ博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/ブレーキ博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 49 %}' target='_blank'>ブレーキ博物館</a>");
+
+              var point = new google.maps.LatLng(35.708059, 139.795286);
+              var marker = create_maker(point, "世界のカバン博物館", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/世界のカバン博物館1.jpg' /><br><a href='{% url 'blog:post_detail' 50 %}' target='_blank'>世界のカバン博物館</a>");
+
+              var point = new google.maps.LatLng(35.711922, 139.798390);
+              var marker = create_maker(point, "浅草ハレテラス 浅草エキミセ屋上", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/浅草ハレテラス浅草エキミセ屋上1.jpg' /><br><a href='{% url 'blog:post_detail' 51 %}' target='_blank'>浅草ハレテラス 浅草エキミセ屋上</a>");
+
+              var point = new google.maps.LatLng(35.787171, 139.869862);
+              var marker = create_maker(point, "水元公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/水元公園1.jpg' /><br><a href='{% url 'blog:post_detail' 17 %}' target='_blank'>水元公園</a>");
+
+              var point = new google.maps.LatLng(35.605463, 139.645608);
+              var marker = create_maker(point, "等々力渓谷公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/等々力渓谷公園1.jpg' /><br><a href='{% url 'blog:post_detail' 52 %}' target='_blank'>等々力渓谷公園</a>");
+
+              var point = new google.maps.LatLng(35.625822, 139.660614);
+              var marker = create_maker(point, "駒沢オリンピック公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/駒沢オリンピック公園1.jpg' /><br><a href='{% url 'blog:post_detail' 53 %}' target='_blank'>駒沢オリンピック公園</a>");
+
+              // その他のサイト 主にじゃらん https://www.jalan.net/kankou/130000/
+              var point = new google.maps.LatLng(35.750401, 139.739255);
+              var marker = create_maker(point, "飛鳥山公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/飛鳥山公園1.jpg' /><br><a href='{% url 'blog:post_detail' 61 %}' target='_blank'>飛鳥山公園</a>");
+
+              var point = new google.maps.LatLng(35.797586, 139.772180);
+              var marker = create_maker(point, "舎人公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/舎人公園1.jpg' /><br><a href='{% url 'blog:post_detail' 62 %}' target='_blank'>舎人公園</a>");
+
+              var point = new google.maps.LatLng(35.619342, 139.743053);
+              var marker = create_maker(point, "一心寺", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/一心寺1.jpg' /><br><a href='{% url 'blog:post_detail' 64 %}' target='_blank'>一心寺</a>");
+
+              var point = new google.maps.LatLng(35.780643, 139.644288);
+              var marker = create_maker(point, "赤塚植物園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/赤塚植物園1.jpg' /><br><a href='{% url 'blog:post_detail' 65 %}' target='_blank'>赤塚植物園</a>");
+
+              var point = new google.maps.LatLng(35.549234, 139.783536);
+              var marker = create_maker(point, "羽田空港展望デッキ", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/羽田空港展望デッキ1.jpg' /><br><a href='{% url 'blog:post_detail' 66 %}' target='_blank'>羽田空港展望デッキ</a>");
+
+              var point = new google.maps.LatLng(35.722488, 139.674187);
+              var marker = create_maker(point, "哲学堂公園", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/哲学堂公園1.jpg' /><br><a href='{% url 'blog:post_detail' 67 %}' target='_blank'>哲学堂公園</a>");
+
+              var point = new google.maps.LatLng(35.785050, 139.599912);
+              var marker = create_maker(point, "陸上自衛隊広報センターりっくんランド", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/陸上自衛隊広報センターりっくんランド1.jpg' /><br><a href='{% url 'blog:post_detail' 68 %}' target='_blank'>陸上自衛隊広報センターりっくんランド</a>");
+
+              var point = new google.maps.LatLng(35.732286, 139.797748);
+              var marker = create_maker(point, "小塚原刑場跡", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/小塚原刑場跡1.jpg' /><br><a href='{% url 'blog:post_detail' 69 %}' target='_blank'>小塚原刑場跡</a>");
+            }
+
+
+            function create_maker(latlng, label, html) {
+              // マーカーを生成
+              var marker = new google.maps.Marker({ position: latlng, map: map, title: label });
+              // マーカーをクリックした時の処理
+              google.maps.event.addListener(marker, "click", function () {
+                infowindow.setContent(html);
+                infowindow.open(map, marker);
+              });
+              gmarkers[i] = marker;
+              i++;
+              return marker;
+            }
+
+            function map_click(i) {
+              google.maps.event.trigger(gmarkers[i], "click");
+            }
+
+            google.maps.event.addDomListener(window, "load", inicializar);
+          </script>
+          <!-- mapここまで -->
+          <!-- 1行空白を追加 -->
+          <br />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
