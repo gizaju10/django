@@ -1,7 +1,5 @@
 {% extends 'base/base1.html' %}
-
 {% block title %}Confirm sign up | ZERO TOKYO{% endblock %}
-
 {% block active_login %}active{% endblock %}
 
 {% block contents %}
@@ -12,18 +10,18 @@
 
             {% if confirmation %}
 
-                <p>ユーザー登録を確定するには、以下のボタンを押してください。</p>
+            <p>ユーザー登録を確定するには、以下のボタンを押してください。</p>
 
-                <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
-                    {% csrf_token %}
-                    <button class="btn btn-primary" type="submit">確定</button>
-                </form>
+            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">確定</button>
+            </form>
 
             {% else %}
 
-                {% url 'account_email' as email_url %}
+            {% url 'account_email' as email_url %}
 
-                <p>リンクの有効期限が過ぎています。 <a href="{{ email_url }}">再申請</a>.</p>
+            <p>リンクの有効期限が過ぎています。 <a href="{{ email_url }}">再申請</a>.</p>
 
             {% endif %}
         </div>

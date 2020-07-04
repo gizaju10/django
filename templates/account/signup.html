@@ -1,7 +1,5 @@
 {% extends 'base/base1.html' %}
-
 {% block title %}Sign Up | ZERO TOKYO{% endblock %}
-
 {% block active_signup %}active{% endblock %}
 
 {% block contents %}
@@ -15,7 +13,7 @@
                 {{ form.as_p }}
 
                 {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
 
                 <button class="btn btn-primary" type="submit">登録</button>
