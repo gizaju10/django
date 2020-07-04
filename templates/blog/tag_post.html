@@ -1,5 +1,4 @@
 {% extends 'base/base4.html' %}
-
 {% block title %}「{{ tag.name }}」の投稿一覧 | ZERO TOKYO{% endblock %}
 
 {% block contents %}
@@ -9,38 +8,20 @@
   <div class="wrapper top_margin">
     <div class="column">
       <div class="info">
+        <div class="example">
+          <main class="col-md-8">
+            <br />
+            <h1>「{{ tag.name }}」の投稿一覧</h1>
+            {% include "blog/snippets/main_post_list.html" %}
+            {% include "blog/snippets/pagination.html" %}
+        </div>
+      </div>
+    </div>
 
-      </html>
-
-  <div class="example">
-    <main class="col-md-8">
-      <br/>
-      <h1>「{{ tag.name }}」の投稿一覧</h1>
-      {% include "blog/snippets/main_post_list.html" %}
-      {% include "blog/snippets/pagination.html" %}
+    <div class="column">
+      <div class="info">
+        <br></br>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-
-<div class="column">
-  <div class="info">
-    <br></br>
-  </div>
-</div>
-</div>
-
-
-{% endblock %}
-
-
-<ul>
-  {% for post in object_list %}
-  {% if user.is_authenticated or post.is_public %}
-  <li>{% if not post.is_public %}[下書き] {% endif %}<a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></li>
-  {% else %}
-  <li>投稿はありません。</li>
-  {% endif %}
-  {% empty %}
-  <li>まだ投稿はありません。</li>
-  {% endfor %}
-</ul>
+  {% endblock %}

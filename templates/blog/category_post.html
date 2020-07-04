@@ -1,5 +1,4 @@
 {% extends 'base/base4.html' %}
-
 {% block title %}「{{ category.name }}」の投稿一覧 | ZERO TOKYO{% endblock %}
 
 {% block contents %}
@@ -9,27 +8,24 @@
   <div class="wrapper top_margin">
     <div class="column">
       <div class="info">
-        
-      <!-- gmap -->
-      <iframe id="map_canvas" src="https://maps.google.co.jp/maps?&output=embed&q={{ category.name }}&z=12"></iframe>
-      </html>
-<!-- <div class="container"> -->
-  <div class="example">
-    <main class="col-md-8">
-      <br/>
-      <h1>「{{ category.name }}」の投稿一覧</h1>
-      {% include "blog/snippets/main_post_list.html" %}
-      {% include "blog/snippets/pagination.html" %}
-  </div>
 
-</div>
-</div>
-
-<div class="column">
-  <div class="info">
-    <br></br>  
-   <!-- map.htmlここまで -->
+        <!-- gmap -->
+        <iframe id="map_canvas" src="https://maps.google.co.jp/maps?&output=embed&q={{ category.name }}&z=12"></iframe>
+        <!-- <div class="container"> -->
+        <div class="example">
+          <main class="col-md-8">
+            <br />
+            <h1>「{{ category.name }}」の投稿一覧</h1>
+            {% include "blog/snippets/main_post_list.html" %}
+            {% include "blog/snippets/pagination.html" %}
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="info">
+        <br></br>
+        <!-- map.htmlここまで -->
+      </div>
+    </div>
   </div>
-</div>
-</div>
-{% endblock %}
+  {% endblock %}
