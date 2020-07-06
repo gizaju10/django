@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from accounts.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -43,6 +43,8 @@ class Post(models.Model):
     is_public = models.BooleanField(default=False)
     image = models.ImageField(
         upload_to='post_images/', null=True, blank=True)
+    # いいね機能    
+    like_num = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['-created_at']
@@ -54,6 +56,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+# いいね機能
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='like_user')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
 
 # ブログの本文中に画像を挿入
 class ContentImage(models.Model):

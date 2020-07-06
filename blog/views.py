@@ -14,7 +14,7 @@ from django.views.generic.edit import CreateView
 
 # コメント返信関連
 from blog.forms import CommentForm, ReplyForm
-from blog.models import Post, Category, Tag, Comment, Reply
+from blog.models import Post, Category, Tag, Comment, Reply, Like
 
 # スーパーユーザーのみできるように変更
 from django.contrib.admin.views.decorators import staff_member_required
@@ -22,8 +22,10 @@ from django.contrib.admin.views.decorators import staff_member_required
 # 各オブジェクトに紐づいている Post の一覧に移動できるように各オブジェクトに紐づいている Post の一覧に移動できるようにする
 from django.shortcuts import get_object_or_404
 
-
-
+# いいね機能の追加
+from django.urls import reverse_lazy
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 
 
 class PostDetailView(DetailView):
@@ -181,3 +183,26 @@ def reply_remove(request, pk):
 
 def searchfunc(request):
     return render(request, 'blog/search_list.html',)
+
+# いいね機能
+@login_required
+def like(request, *args, **kwargs):
+    post = Post.objects.get(id=kwargs['pk'])
+    is_like = Like.objects.filter(user=request.user).filter(post=post).count()
+    # unlike
+    if is_like > 0:
+        liking = Like.objects.get(post__id=kwargs['pk'], user=request.user)
+        liking.delete()
+        post.like_num -= 1
+        post.save()
+        messages.warning(request, 'いいねを取り消しました')
+        return redirect(reverse_lazy('blog:post_detail', kwargs={'pk': kwargs['pk']}))
+    # like
+    post.like_num += 1
+    post.save()
+    like = Like()
+    like.user = request.user
+    like.post = post
+    like.save()
+    messages.success(request, 'いいね！しました')
+    return HttpResponseRedirect(reverse_lazy('blog:post_detail', kwargs={'pk': kwargs['pk']}))

@@ -1,6 +1,10 @@
 from django.urls import path
 
-from blog.views import IndexView, PostDetailView, CategoryListView, TagListView, searchfunc
+from django.conf.urls import url
+
+from blog.views import IndexView, PostDetailView, CategoryListView, TagListView, searchfunc, like
+
+
 
 from blog.views import (
     CategoryPostView,
@@ -37,4 +41,7 @@ urlpatterns = [
 
     # 検索から探すクリック時のリンク
     path('search_list/', searchfunc, name='search_list'),
+
+    # いいね機能
+    path('post/<int:pk>/like/', like, name='like'),
 ]
