@@ -1,11 +1,11 @@
-.navbar{
+.navbar {
     display: flex;
 }
-  
+
 .text {
     font-size: 200%;
 }
-  
+
 .text {
     position: relative;
     display: inline-block;
@@ -25,26 +25,32 @@
     background-color: white;
     border-radius: 2px;
 }
-  
+
 #map_canvas {
-    max-width:600px;
+    max-width: 600px;
     min-width: 300px;
-    height:400px;
+    height: 400px;
     width: 100%;
-} 
-  
-/* スマホ,タブレットでの横幅はみ出しの修正 */
-div.sample {
-    width: 100%;  
-}
-  
-/* category_list.html */
-.example{
-    width: 1000px;
-    max-width: 100%;	
 }
 
+
+/* スマホ,タブレットでの横幅はみ出しの修正 */
+
+div.sample {
+    width: 100%;
+}
+
+
+/* category_list.html */
+
+.example {
+    width: 1000px;
+    max-width: 100%;
+}
+
+
 /* 丸ボタン設定 */
+
 .btn-circle-border-double {
     display: inline-block;
     text-decoration: none;
@@ -59,57 +65,79 @@ div.sample {
     /* overflow: hidden; */
     transition: .6s;
     font-size: 25px;
-  }
-  
-  .btn-circle-border-double:hover {
+}
+
+.btn-circle-border-double:hover {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
-  }
+}
 
-  /* 上へ戻るボタン（右下追加） */
+
+/* 上へ戻るボタン（右下追加） */
+
 #topbutton {
     /* ▼ボタンの表示位置を画面の右下に固定 */
-    position: fixed; /* ←表示場所を固定 */
-    bottom: 18px;   /* ←下端からの距離 */
-    right: 18px;    /* ←右端からの距離 */
-    width: 7em;     /* ←横幅 */
-  
+    position: fixed;
+    /* ←表示場所を固定 */
+    bottom: 18px;
+    /* ←下端からの距離 */
+    right: 18px;
+    /* ←右端からの距離 */
+    width: 7em;
+    /* ←横幅 */
     /* ▼最初は非表示にしておく */
     display: none;
-  
     /* ▼配色・配置・文字の装飾など */
-    background-color: #2525aa; /* ←背景色 */
-    opacity: 0.75;        /* ←透明度 */
-    border-radius: 24px;  /* ←角丸の半径 */
-    text-align: center;  /* ←文字の位置 */
-    font-size: 120%;     /* ←文字サイズ */
-    font-weight: bold;   /* ←文字の太さ */
-    margin: 0px;          /* ←外側の余白 */
-    padding: 10px;       /* ←内側の余白 */
-  }
-  #topbutton a {
+    background-color: #2525aa;
+    /* ←背景色 */
+    opacity: 0.75;
+    /* ←透明度 */
+    border-radius: 24px;
+    /* ←角丸の半径 */
+    text-align: center;
+    /* ←文字の位置 */
+    font-size: 120%;
+    /* ←文字サイズ */
+    font-weight: bold;
+    /* ←文字の太さ */
+    margin: 0px;
+    /* ←外側の余白 */
+    padding: 10px;
+    /* ←内側の余白 */
+}
+
+#topbutton a {
     /* ▼リンクの装飾 */
-    color: white;          /* ←文字色 */
-    text-decoration: none; /* ←下線なし */
-  }
-  #topbutton a:hover {
+    color: white;
+    /* ←文字色 */
+    text-decoration: none;
+    /* ←下線なし */
+}
+
+#topbutton a:hover {
     /* ▼マウスが載ったときの装飾 */
     /* color: yellow;              ←文字色 */
     /* text-decoration: underline; ←下線あり */
-  }
-  /* ここまで 上へ戻るボタン（右下追加） */
+}
 
-  /* FireFoxでのtop表示調整の為 */
-  .top_margin {
-    margin-top:30px;
-    }
+
+/* ここまで 上へ戻るボタン（右下追加） */
+
+
+/* FireFoxでのtop表示調整の為 */
+
+.top_margin {
+    margin-top: 30px;
+}
+
 
 /* 一覧ページに文字制限の追加 */
+
 .character-limit {
-  max-width: 100%; 
-  white-space: nowrap;  
-  overflow: hidden;  
-  text-overflow: ellipsis;  
-  -webkit-text-overflow: ellipsis;  
-  -o-text-overflow: ellipsis;  
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
 }

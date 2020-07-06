@@ -1,76 +1,96 @@
-.navbar{
+.navbar {
     display: flex;
-    }
-  
+}
+
 .text {
     font-size: 200%;
 }
-  
+
+
 /* サイト二分割設定 */
+
 .column {
     height: flex;
     width: 100%;
 }
-  
+
 @media all and (min-width: 500px) {
-.wrapper {
-    display: flex;
+    .wrapper {
+        display: flex;
     }
 }
-  
+
+
 /* gmapのデザイン */
+
 #map_canvas {
-    max-width:600px;
+    max-width: 600px;
     min-width: 300px;
-    height:400px;
+    height: 400px;
     width: 100%;
-} 
-  
-  
- /* スマホ,タブレットでの横幅はみ出しの修正 */
+}
+
+
+/* スマホ,タブレットでの横幅はみ出しの修正 */
+
 div.sample {
     width: 100%;
 }
-  
- /* リスト編集 */
-ul.bbb, ol.bbb {
+
+
+/* リスト編集 */
+
+ul.bbb,
+ol.bbb {
     padding: 0;
     position: relative;
 }
-    
-ul.bbb li.bbb, ol.bbb li.bbb {
-    border-left: solid 6px #2d8fdd;/*左側の線*/
-    background: #f1f8ff;/*背景色*/
-    margin-bottom: 3px;/*下のバーとの余白*/
+
+ul.bbb li.bbb,
+ol.bbb li.bbb {
+    border-left: solid 6px #2d8fdd;
+    /*左側の線*/
+    background: #f1f8ff;
+    /*背景色*/
+    margin-bottom: 3px;
+    /*下のバーとの余白*/
     line-height: 1.5;
     padding: 0.5em;
-    list-style-type: none!important;/*ポチ消す*/
+    list-style-type: none!important;
+    /*ポチ消す*/
 }
-    
+
 .ttt {
     width: 400px;
 }
 
+
 /* リストを二列にする */
-ul.bbb{
+
+ul.bbb {
     width: 448px;
     list-style: none outside;
     max-width: 100%;
-    }
-  li.bbb{
+}
+
+li.bbb {
     padding: 0;
     float: left;
     width: 224px;
     max-width: 50%;
-    }  
+}
+
 
 /* GoogleMapAPI用 */
+
 img.top_map {
     height: flex;
     width: 100px;
-  }
+}
+
 
 /* 丸ボタン設定 */
+
 .btn-circle-border-double {
     display: inline-block;
     text-decoration: none;
@@ -85,70 +105,92 @@ img.top_map {
     /* overflow: hidden; */
     transition: .6s;
     font-size: 25px;
-  }
-  
-  .btn-circle-border-double:hover {
+}
+
+.btn-circle-border-double:hover {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
-  }
+}
+
 
 /* 上へ戻るボタン（右下追加） */
+
 #topbutton {
     /* ▼ボタンの表示位置を画面の右下に固定 */
-    position: fixed; /* ←表示場所を固定 */
-    bottom: 18px;   /* ←下端からの距離 */
-    right: 18px;    /* ←右端からの距離 */
-    width: 7em;     /* ←横幅 */
-  
+    position: fixed;
+    /* ←表示場所を固定 */
+    bottom: 18px;
+    /* ←下端からの距離 */
+    right: 18px;
+    /* ←右端からの距離 */
+    width: 7em;
+    /* ←横幅 */
     /* ▼最初は非表示にしておく */
     display: none;
-  
     /* ▼配色・配置・文字の装飾など */
-    background-color: #2525aa; /* ←背景色 */
-    opacity: 0.75;        /* ←透明度 */
-    border-radius: 24px;  /* ←角丸の半径 */
-    text-align: center;  /* ←文字の位置 */
-    font-size: 120%;     /* ←文字サイズ */
-    font-weight: bold;   /* ←文字の太さ */
-    margin: 0px;          /* ←外側の余白 */
-    padding: 10px;       /* ←内側の余白 */
-  }
-  #topbutton a {
+    background-color: #2525aa;
+    /* ←背景色 */
+    opacity: 0.75;
+    /* ←透明度 */
+    border-radius: 24px;
+    /* ←角丸の半径 */
+    text-align: center;
+    /* ←文字の位置 */
+    font-size: 120%;
+    /* ←文字サイズ */
+    font-weight: bold;
+    /* ←文字の太さ */
+    margin: 0px;
+    /* ←外側の余白 */
+    padding: 10px;
+    /* ←内側の余白 */
+}
+
+#topbutton a {
     /* ▼リンクの装飾 */
-    color: white;          /* ←文字色 */
-    text-decoration: none; /* ←下線なし */
-  }
-  #topbutton a:hover {
+    color: white;
+    /* ←文字色 */
+    text-decoration: none;
+    /* ←下線なし */
+}
+
+#topbutton a:hover {
     /* ▼マウスが載ったときの装飾 */
     /* color: yellow;              ←文字色 */
     /* text-decoration: underline; ←下線あり */
-  }
-  /* ここまで 上へ戻るボタン（右下追加） */
+}
+
+
+/* ここまで 上へ戻るボタン（右下追加） */
+
 
 /* FireFoxでのtop表示調整の為 */
-  .top_margin {
-    margin-top:30px;
-    }
 
-  /* gmap上文 */
-  .text {
-      font-size: 200%;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 1em;
-      color: #000;
-  }
-  
-  .text:before {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      display: inline-block;
-      width: 60px;
-      height: 5px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      background-color: #000;
-      border-radius: 2px;
-  }
+.top_margin {
+    margin-top: 30px;
+}
+
+
+/* gmap上文 */
+
+.text {
+    font-size: 200%;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    color: #000;
+}
+
+.text:before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    display: inline-block;
+    width: 60px;
+    height: 5px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #000;
+    border-radius: 2px;
+}

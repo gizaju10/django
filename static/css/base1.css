@@ -1,12 +1,14 @@
-.navbar{
-    display: flex; 
+.navbar {
+    display: flex;
 }
- 
+
+
 /* gmap上文 */
+
 .text {
     font-size: 200%;
 }
-  
+
 .text {
     position: relative;
     display: inline-block;
@@ -27,64 +29,81 @@
     border-radius: 2px;
 }
 
+
 /* サイト二分割設定 */
+
 .column {
     height: flex;
     width: 100%;
 }
-  
+
 @media all and (min-width: 500px) {
-.wrapper {
-    display: flex;
+    .wrapper {
+        display: flex;
     }
 }
 
+
 /* リスト編集 */
-ul.bbb, ol.bbb {
-  padding: 0;
-  position: relative;
+
+ul.bbb,
+ol.bbb {
+    padding: 0;
+    position: relative;
 }
-  
-ul.bbb li.bbb, ol.bbb li.bbb {
-  border-left: solid 6px #2d8fdd;/*左側の線*/
-  background: #f1f8ff;/*背景色*/
-  margin-bottom: 3px;/*下のバーとの余白*/
-  line-height: 1.5;
-  padding: 0.5em;
-  list-style-type: none!important;/*ポチ消す*/
+
+ul.bbb li.bbb,
+ol.bbb li.bbb {
+    border-left: solid 6px #2d8fdd;
+    /*左側の線*/
+    background: #f1f8ff;
+    /*背景色*/
+    margin-bottom: 3px;
+    /*下のバーとの余白*/
+    line-height: 1.5;
+    padding: 0.5em;
+    list-style-type: none!important;
+    /*ポチ消す*/
 }
 
 .ttt {
-  width: 400px;
+    width: 400px;
 }
 
+
 /* リストを二列にする */
-ul.bbb{
-  width: 448px;
-  list-style: none outside;
-  max-width: 100%;
-  }
-li.bbb{
-  padding: 0;
-  float: left;
-  width: 224px;
-  max-width: 50%;
-  }  
+
+ul.bbb {
+    width: 448px;
+    list-style: none outside;
+    max-width: 100%;
+}
+
+li.bbb {
+    padding: 0;
+    float: left;
+    width: 224px;
+    max-width: 50%;
+}
 
 #map_canvas {
-    max-width:600px;
+    max-width: 600px;
     min-width: 300px;
-    height:400px;
+    height: 400px;
     width: 100%;
-} 
-  
-  /* GoogleMapAPI用 */
+}
+
+
+/* GoogleMapAPI用 */
+
 img.top_map {
     height: flex;
     width: 100px;
 }
 
+
 /* 丸ボタン設定 */
+
 .btn-circle-border-double {
     display: inline-block;
     text-decoration: none;
@@ -99,282 +118,334 @@ img.top_map {
     /* overflow: hidden; */
     transition: .6s;
     font-size: 25px;
-  }
-  
-  .btn-circle-border-double:hover {
+}
+
+.btn-circle-border-double:hover {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
-  }
-
-  h1.top {
-    font-size: 80px;
-  }
-
-  h2.top {
-    font-size: 30px;
-  }
-
-  p.font {
-    font-size: 20px;
-  }
-/* スマホ,タブレットでの横幅はみ出しの修正 */
-div.sample {
-    width: 100%;  
 }
+
+h1.top {
+    font-size: 80px;
+}
+
+h2.top {
+    font-size: 30px;
+}
+
+p.font {
+    font-size: 20px;
+}
+
+
+/* スマホ,タブレットでの横幅はみ出しの修正 */
+
+div.sample {
+    width: 100%;
+}
+
 
 /* 上へ戻るボタン（右下追加） */
+
 #topbutton {
-  /* ▼ボタンの表示位置を画面の右下に固定 */
-  position: fixed; /* ←表示場所を固定 */
-  bottom: 18px;   /* ←下端からの距離 */
-  right: 18px;    /* ←右端からの距離 */
-  width: 7em;     /* ←横幅 */
-
-  /* ▼最初は非表示にしておく */
-  display: none;
-
-  /* ▼配色・配置・文字の装飾など */
-  background-color: #2525aa; /* ←背景色 */
-  opacity: 0.75;        /* ←透明度 */
-  border-radius: 24px;  /* ←角丸の半径 */
-  text-align: center;  /* ←文字の位置 */
-  font-size: 120%;     /* ←文字サイズ */
-  font-weight: bold;   /* ←文字の太さ */
-  margin: 0px;          /* ←外側の余白 */
-  padding: 10px;       /* ←内側の余白 */
+    /* ▼ボタンの表示位置を画面の右下に固定 */
+    position: fixed;
+    /* ←表示場所を固定 */
+    bottom: 18px;
+    /* ←下端からの距離 */
+    right: 18px;
+    /* ←右端からの距離 */
+    width: 7em;
+    /* ←横幅 */
+    /* ▼最初は非表示にしておく */
+    display: none;
+    /* ▼配色・配置・文字の装飾など */
+    background-color: #2525aa;
+    /* ←背景色 */
+    opacity: 0.75;
+    /* ←透明度 */
+    border-radius: 24px;
+    /* ←角丸の半径 */
+    text-align: center;
+    /* ←文字の位置 */
+    font-size: 120%;
+    /* ←文字サイズ */
+    font-weight: bold;
+    /* ←文字の太さ */
+    margin: 0px;
+    /* ←外側の余白 */
+    padding: 10px;
+    /* ←内側の余白 */
 }
+
 #topbutton a {
-  /* ▼リンクの装飾 */
-  color: white;          /* ←文字色 */
-  text-decoration: none; /* ←下線なし */
+    /* ▼リンクの装飾 */
+    color: white;
+    /* ←文字色 */
+    text-decoration: none;
+    /* ←下線なし */
 }
+
 #topbutton a:hover {
-  /* ▼マウスが載ったときの装飾 */
-  /* color: yellow;              ←文字色 */
-  /* text-decoration: underline; ←下線あり */
+    /* ▼マウスが載ったときの装飾 */
+    /* color: yellow;              ←文字色 */
+    /* text-decoration: underline; ←下線あり */
 }
+
+
 /* ここまで 上へ戻るボタン（右下追加） */
 
 
-
-
 /* FireFoxでのtop表示調整の為 */
-.top_margin {
-  margin-top:30px;
-  }
 
+.top_margin {
+    margin-top: 30px;
+}
 
 
 /* post_detail.htmlからコピー */
-  img.blogimage {
+
+img.blogimage {
     width: 500px;
-    max-width: 100%; 
+    max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  /* gmapのデザイン */
-  .map_post {
-      max-width:500px;
-      min-width: 250px;
-      height:400px;
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    } 
-  
-  table th, table td {
-    border: dashed 1px #c0c0c0;/**/
+}
+
+
+/* gmapのデザイン */
+
+.map_post {
+    max-width: 500px;
+    min-width: 250px;
+    height: 400px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th,
+table td {
+    border: dashed 1px #c0c0c0;
+    /**/
     /*破線 1px silver*/
-  }
-  
-  table {
+}
+
+table {
     border-collapse: collapse;
-    border: solid 2px #c0c0c0;/*表全体を線で囲う*/
-  }
-  /* ここまで post_detail.htmlからコピー */
+    border: solid 2px #c0c0c0;
+    /*表全体を線で囲う*/
+}
+
+
+/* ここまで post_detail.htmlからコピー */
 
 
 /* コメント下、ログインユーザー向け注意 */
-  a.caution {
+
+a.caution {
     font-size: 10px;
-  }
-
-
+}
 
 
 /* コメント枠 */
+
 .box3 {
-  padding: 0.5em 1em;
-  margin: 3em 0em 0.1em 0em;
-  color: #2c2c2f;
-  background: #f0f8ff;/*背景色*/
+    padding: 0.5em 1em;
+    margin: 3em 0em 0.1em 0em;
+    color: #2c2c2f;
+    background: #f0f8ff;
+    /*背景色*/
 }
+
 .box3 p {
-  margin: 0; 
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* コメント返信枠 */
-.box4{
-  padding: 0.5em 1em;
-  margin: 1em 0em 0.1em 0em;
-  color: #2c2c2f;
-  background: #f0f8ff;/*背景色*/
-  border-top: solid 5px #5989cf;
+
+.box4 {
+    padding: 0.5em 1em;
+    margin: 1em 0em 0.1em 0em;
+    color: #2c2c2f;
+    background: #f0f8ff;
+    /*背景色*/
+    border-top: solid 5px #5989cf;
 }
+
 .box4 p {
-  margin: 0; 
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* コメント・返信したcaution */
+
 .box19 {
-  position: relative;
-  padding:0.25em 1em;
+    position: relative;
+    padding: 0.25em 1em;
 }
-.box19:before,.box19:after{ 
-  content:'';
-  width: 20px;
-  height: 30px;
-  position: absolute;
-  display: inline-block;
+
+.box19:before,
+.box19:after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
 }
-.box19:before{
-  border-left: solid 1px #5767bf;
-  border-top: solid 1px #5767bf;
-  top:0;
-  left: 0;
+
+.box19:before {
+    border-left: solid 1px #5767bf;
+    border-top: solid 1px #5767bf;
+    top: 0;
+    left: 0;
 }
-.box19:after{
-  border-right: solid 1px #5767bf;
-  border-bottom: solid 1px #5767bf;
-  bottom:0;
-  right: 0;
+
+.box19:after {
+    border-right: solid 1px #5767bf;
+    border-bottom: solid 1px #5767bf;
+    bottom: 0;
+    right: 0;
 }
+
 .box19 p {
-  margin: 0; 
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* 返信ボタンのデザイン */
-.btn.type04{
-  width: 100%;
-  max-width: 100px;
-  padding: 0px 0px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 30px;
-  letter-spacing: 0.1em;
-  color: #fff;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  background-color: #ed576c;
-  background-size: 200% auto;
-  /* -webkit-box-shadow: 0 0 10px #ed576c; */
-  /* box-shadow: 0 0 10px #ed576c; */
-  }
+
+.btn.type04 {
+    width: 100%;
+    max-width: 100px;
+    padding: 0px 0px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 30px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    background-color: #ed576c;
+    background-size: 200% auto;
+    /* -webkit-box-shadow: 0 0 10px #ed576c; */
+    /* box-shadow: 0 0 10px #ed576c; */
+}
+
 
 /* 一覧ページに文字制限の追加 */
-  .character-limit {
-    max-width: 100%; 
-    white-space: nowrap;  
-    overflow: hidden;  
-    text-overflow: ellipsis;  
-    -webkit-text-overflow: ellipsis;  
-    -o-text-overflow: ellipsis;  
-  }
 
-
-
-
+.character-limit {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
 
 
 /* 投稿記事のカテゴリ、タグボタンデザイン */
+
 .btn-vertical-border {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 5px 11px 5px 15px;
-  text-decoration: none;
-  color: #67c5ff;
-  transition: .4s;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px 11px 5px 15px;
+    text-decoration: none;
+    color: #67c5ff;
+    transition: .4s;
 }
 
 .btn-vertical-border:before {
-  position: absolute;
-  display: inline-block;
-  content: '';
-  width: 4px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 3px;
-  background:#67c5ff;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    background: #67c5ff;
 }
 
 .btn-vertical-border:after {
-  position: absolute;
-  display: inline-block;
-  content: '';
-  width: 4px;
-  height: 100%;
-  top:0;
-  left: 100%;
-  border-radius: 3px;
-  background:#67c5ff;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    border-radius: 3px;
+    background: #67c5ff;
 }
 
-.btn-vertical-border:hover:before, .btn-vertical-border:hover:after {
-  -webkit-transform: rotate(10deg);
-  transform: rotate(10deg);
+.btn-vertical-border:hover:before,
+.btn-vertical-border:hover:after {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
 }
-
 
 
 /* ログインページ注意書き */
+
 .box17 {
-  padding: 0.5em 1em;
-  margin: 1em 0;
-  font-weight: bold;
-  color: #a9a9a9;/*文字色*/
-  background: #FFF;
-  border: solid 3px #6091d3;/*線*/
-  border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    font-weight: bold;
+    color: #a9a9a9;
+    /*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
 }
+
 .box17 p {
-  margin: 0; 
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* ログインページ_ゲストユーザーログイン */
+
 .box29 {
-  margin: 2em 0;
-  background: #dcefff;
-}
-.box29 .box-title {
-  font-size: 1.2em;
-  background: #5fb3f5;
-  padding: 4px;
-  text-align: center;
-  color: #FFF;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-}
-.box29 p {
-  padding: 15px 20px;
-  margin: 0;
+    margin: 2em 0;
+    background: #dcefff;
 }
 
+.box29 .box-title {
+    font-size: 1.2em;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.box29 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+
 /* ログインページ_ゲストユーザーログイン_詳細枠 */
+
 .box1 {
-  padding: 0.2em 0.2em;
-  margin: 0.2em 0;
-  font-weight: bold;
-  display: inline-block;
-  border: solid 1px #5fb3f5;
-  background:linear-gradient(transparent 70%, #FFFF00 0%);
+    padding: 0.2em 0.2em;
+    margin: 0.2em 0;
+    font-weight: bold;
+    display: inline-block;
+    border: solid 1px #5fb3f5;
+    background: linear-gradient(transparent 70%, #FFFF00 0%);
 }
