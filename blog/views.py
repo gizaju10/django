@@ -179,6 +179,5 @@ def reply_remove(request, pk):
     reply.delete()
     return redirect('blog:post_detail', pk=reply.comment.post.pk)
 
-
 def searchfunc(request):
     return render(request, 'blog/search_list.html',)

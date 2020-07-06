@@ -26,7 +26,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
 
     # Postに追加
-    map = models.CharField(max_length=255, default='object.title')
+    map = models.CharField(max_length=255, default='場所もしくは住所の入力で地図を表示')
 
     content = models.TextField()
     description = models.TextField(blank=True)
