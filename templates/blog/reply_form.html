@@ -10,7 +10,10 @@
       <p>To: {{ comment.author }}さん</p>
       <p class="text-black-50">{{ comment.text|linebreaksbr }}</p>
       <form method="POST">{% csrf_token %}
-        <p><input type='text' name='text'></p>
+
+        <!-- 返信テキスト欄   -->
+        <p>Comment:<textarea class='textarea' name="text" cols="10" rows="2" wrap="hard" maxlength="1000"></textarea></p>
+        
         <input type='hidden' name='author' value='{{ user.username }}'>
         {% if user.is_authenticated %}
         <button type="submit" class="btn btn-primary">送信</button>
