@@ -69,8 +69,10 @@
       </center>
 
       <!-- いいねの追加 -->
-      <a href="{% url 'blog:like' post.pk %}">いいね！</a>{{ blog.like_num }}
-      
+      <div align="right">
+      <a  type="button" class="btn btn-outline-primary" href="{% url 'blog:like' post.pk %}">いいね！{{ object.like_num }}</a>{{ blog.like_num }}
+      </div>
+
       </article>
       {% if user.is_authenticated %}
       <article class="comment-area">
