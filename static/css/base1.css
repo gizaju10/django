@@ -449,3 +449,15 @@ a.caution {
     border: solid 1px #5fb3f5;
     background: linear-gradient(transparent 70%, #FFFF00 0%);
 }
+
+
+
+.textarea {
+    width: 90%; 
+    max-width: 800px;
+    max-height: 600px;
+    min-width: 125px;
+    min-height: 100px;
+    width:400px;
+    height:300px
+  }
