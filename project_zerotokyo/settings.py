@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     
-    #AWS_S3を利用中の為、コメント化
+    # AWS（S3）を利用の為、コメント化
     # 'storages',　
 ]
 
@@ -88,7 +88,6 @@ WSGI_APPLICATION = 'project_zerotokyo.wsgi.application'
 DATABASES = {
     'default':env.db(),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
