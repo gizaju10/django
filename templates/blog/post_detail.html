@@ -68,9 +68,10 @@
         </table>
       </center>
 
+      <br/>
       <!-- いいねの追加 -->
       <div align="right">
-      <a  type="button" class="btn btn-outline-primary" href="{% url 'blog:like' post.pk %}">いいね！{{ object.like_num }}</a>{{ blog.like_num }}
+      <a type="button" class="btn btn-outline-primary" href="{% url 'blog:like' post.pk %}">いいね！{{ object.like_num }}</a>{{ blog.like_num }}
       </div>
 
       </article>

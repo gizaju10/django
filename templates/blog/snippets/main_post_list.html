@@ -16,6 +16,12 @@
     </a>
     <p class="card-text">{{ post.published_at|date }}</p>
     <p class="character-limit">{{ post.content|safe }}</p>
+
+    <!-- いいねの追加 -->
+    <div align="right">
+     <a  type="button" class="btn btn-outline-primary" href="{% url 'blog:like' post.pk %}">いいね！</a>{{ blog.like_num }}
+    </div>
+
     <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary">詳細へ進む</a>
   </div>
 </div>
