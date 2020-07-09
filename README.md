@@ -38,7 +38,7 @@ https://gizagiza.work/
 
 <h4>18:30(予約していた飲食店内)</h4>
 <pre>
-(<a href="https://gizagiza.work/blog/post/21/" target="_blank">『インターメディアテク』</a>のページを開く)
+(<a href="https://gizagiza.work/blog/post/21/" target="_blank" rel="noopener noreferrer">『インターメディアテク』</a>のページを開く)
 Aさん：コメント欄あるんだ！『インターメディアテク』楽しかったし、コメントでも残そうかな。
 (コメント投稿用に会員登録)
 Aさん：無料とは思えない程、沢山の展示を見れて楽しかったです。
