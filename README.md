@@ -21,10 +21,10 @@ https://gizagiza.work/
 <ol style="list-style-type: decimal">
   <li>『最新スポット』</li>
   <li>『23区エリア』</li>
+  <li>『天気』</li>
   <li>『検索』</li>
 </ol>
-上記、3点から
-<strong>簡単に23区内の観光スポットを探すことができるアプリです。</strong>
+上記、4点から<strong>簡単に23区内の観光スポットを探すことができます。</strong>
 <br>
 
 <h2>使用例</h2>
