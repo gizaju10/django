@@ -16,7 +16,7 @@ https://gizagiza.work/
  </div>
 <br>
 <h2>概要</h2>
-<h3>東京23区内で「0円で東京観光」できる場所を調べられるアプリです。</h3>
+<h3>東京23区内の「0円で東京観光」できる場所を調べられるアプリです。</h3>
 <strong><p>《操作が分かりやすい》</p></strong>
 <ol style="list-style-type: decimal">
   <li>『最新スポット』</li>
