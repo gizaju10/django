@@ -6,7 +6,7 @@
 https://gizagiza.work/
 
 ### PC画面例
-![PC](https://giza-s3.s3-ap-northeast-1.amazonaws.com/zerorokyo_PC.PNG)
+![PC](https://giza-s3.s3-ap-northeast-1.amazonaws.com/pc.gif)
 
 <div align="center">
   <h3>スマホ画面例</h3>
