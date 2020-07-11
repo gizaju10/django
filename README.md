@@ -5,14 +5,11 @@
 ## URL
 https://gizagiza.work/
 
-### PC画面例
-![PC](https://giza-s3.s3-ap-northeast-1.amazonaws.com/pc2.gif)
-
 <div align="center">
+  <h3>PC画面例</h3>
+    <img src="https://giza-s3.s3-ap-northeast-1.amazonaws.com/pc2.gif" title＝"PC">
   <h3>スマホ画面例</h3>
-</div>
-<div align="center">
-  <img src="" width=25% title＝"スマホ">
+    <img src="" width=25% title＝"スマホ">
  </div>
 <br>
 <h2>概要</h2>
