@@ -217,7 +217,6 @@
               var marker = create_maker(point, "小塚原刑場跡", "<img class='top_map' src='https://giza-s3.s3.ap-northeast-1.amazonaws.com/post_content_images/小塚原刑場跡1.jpg' /><br><a href='{% url 'blog:post_detail' 69 %}' target='_blank'>小塚原刑場跡</a>");
             }
 
-
             function create_maker(latlng, label, html) {
               // マーカーを生成
               var marker = new google.maps.Marker({ position: latlng, map: map, title: label });
@@ -243,4 +242,4 @@
         </div>
       </div>
     </div>
-    {% endblock %}
+{% endblock %}
