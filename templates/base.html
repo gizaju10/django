@@ -60,7 +60,7 @@ https//gizagiza.work/accounts/password/reset/key/done/
                   </li>
                   {% elif user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}">管理者ページ(一部ユーザー閲覧のみ可)</a>
+                    <a class="nav-link" href="{% url 'admin:index' %}">管理者ページ(一部ユーザーのみ閲覧可)</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" style="text-transform: none; "href="{% url 'account_logout' %}"><span style="font-weight: 900; color: #fff;">{{ request.user }}</span><span style="font-weight: 100;">でログイン中</span></a>
