@@ -29,8 +29,8 @@ https://gizagiza.work/
 <h3>東京観光中のAさん</h3>
 <h4>16:00（東京駅構内）</h4>
 <pre>
-  Aさん:晩御飯に千代田区のお店を18時に予約したけど、あと2時間時間潰せないかな？
-  (23区エリアから千代田区を選択)
+  Aさん:晩御飯に千代田区のお店を18時に予約してるけど、2時間暇だな...。
+  (<a href="https://gizagiza.work/blog/categories/" target="_blank">23区エリア</a>から<a href="https://gizagiza.work/blog/category/Chiyoda-ku/" target="_blank">千代田区</a>を選択)
   Aさん:『インターメディアテク』って場所面白そう。18:00までやってるみたいだし、行ってみよう!
 </pre>
 
