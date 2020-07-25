@@ -47,16 +47,23 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'admin:index' %}">管理者ページ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="text-transform: none; " href="{% url 'account_logout' %}"><span
-                  style="font-weight: 900; color: #fff;">{{ request.user }}</span><span
-                  style="font-weight: 100;">でログイン中</span></a>
+              <a class="nav-link" style="text-transform: none; "href="{% url 'account_logout' %}"><span style="font-weight: 900; color: #fff;">{{ request.user }}</span><span style="font-weight: 100;">でログイン中</span></a>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
+                <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
+            </li>
+            {% elif user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}">管理者ページ(一部ユーザー閲覧のみ可)</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="text-transform: none; "href="{% url 'account_logout' %}"><span style="font-weight: 900; color: #fff;">{{ request.user }}</span><span style="font-weight: 100;">でログイン中</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
             </li>
             {% else %}
             <li class="nav-item {% block active_signup %}{% endblock %}">
