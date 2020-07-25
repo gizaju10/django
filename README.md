@@ -4,6 +4,7 @@
 
 ## URL
 https://gizagiza.work/
+<p>2020年7月25日完成 ※以降、必要に応じて更新予定</p>
 
 <div align="center">
   <h3>PC画面例(7月12日時点)</h3>
